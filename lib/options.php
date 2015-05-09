@@ -1216,49 +1216,49 @@ $sections[] = array(
 $sections[] = array(
     'icon' => 'el-icon-th-large',
     'icon_class' => 'icon-large',
-    'title' => __('Portfolio', 'kleo_framework'),
-    'desc' => __('<p class="description">Portfolio related settings. Please re-save permalinks when changing slugs or archive page.</p>', 'kleo_framework'),
+    'title' => __('marcas', 'kleo_framework'),
+    'desc' => __('<p class="description">marcas related settings. Please re-save permalinks when changing slugs or archive page.</p>', 'kleo_framework'),
     'fields' => array(
 
         array(
-            'id' => 'portfolio_custom_archive',
+            'id' => 'marcas_custom_archive',
             'type' => 'switch',
-            'title' => __('Custom page for Portfolio Archive', 'kleo_framework'),
+            'title' => __('Custom page for marcas Archive', 'kleo_framework'),
             'subtitle' => 'This means you need to create a page and assign it below. Re-save permalinks from Settings - Permalinks',
             'description' => 'Setting it to ON will take the name and slug from the page assigned.',
             'default' => '0' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'portfolio_page',
+            'id' => 'marcas_page',
             'type' => 'select',
             'data' => 'pages',
-            'required' => array('portfolio_custom_archive', 'equals' , '1'),
-            'title' => __('Portfolio Page', 'kleo_framework'),
-            'subtitle' => "You need to add [kleo_portfolio] shortcode to the page or using Visual Composer.",
+            'required' => array('marcas_custom_archive', 'equals' , '1'),
+            'title' => __('marcas Page', 'kleo_framework'),
+            'subtitle' => "You need to add [kleo_marcas] shortcode to the page or using Visual Composer.",
             'default' => ''
         ),
         array(
-            'id' => 'portfolio_name',
+            'id' => 'marcas_name',
             'type' => 'text',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
-            'title' => __('Portfolio name', 'kleo_framework'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'title' => __('marcas name', 'kleo_framework'),
             'subtitle' => "You can replace the name with something else",
-            'default' => 'Portfolio'
+            'default' => 'marcas'
         ),
         array(
-            'id' => 'portfolio_slug',
+            'id' => 'marcas_slug',
             'type' => 'text',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
-            'title' => __('Portfolio link', 'kleo_framework'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'title' => __('marcas link', 'kleo_framework'),
             'subtitle' => "You can replace the name with something else. This affects your permalink structure so after changing this you must re-save options in Settings - Permalinks",
-            'default' => 'portfolio'
+            'default' => 'marcas'
         ),
         array(
-            'id' => 'portfolio_style',
+            'id' => 'marcas_style',
             'type' => 'select',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
-            'title' => __('Display style for Portfolio page', 'kleo_framework'),
-            'subtitle' => 'How to display the portfolio listed items ',
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'title' => __('Display style for marcas page', 'kleo_framework'),
+            'subtitle' => 'How to display the marcas listed items ',
             'options' => array(
                 'default' => 'Default',
                 'overlay' => 'Overlay'
@@ -1266,11 +1266,11 @@ $sections[] = array(
             'default' => 'default'
         ),
         array(
-            'id' => 'portfolio_title_style',
+            'id' => 'marcas_title_style',
             'type' => 'select',
             'required' => array(
-                array('portfolio_custom_archive','equals','0'),
-                array('portfolio_style','equals','overlay')
+                array('marcas_custom_archive','equals','0'),
+                array('marcas_style','equals','overlay')
             ),
             'title' => __('Title style', 'kleo_framework'),
             'subtitle' => '',
@@ -1281,26 +1281,26 @@ $sections[] = array(
             'default' => 'normal' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'portfolio_excerpt',
+            'id' => 'marcas_excerpt',
             'type' => 'switch',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
             'title' => __('Show/Hide subtitle', 'kleo_framework'),
-            'subtitle' => 'Display item excerpt on portfolio page',
+            'subtitle' => 'Display item excerpt on marcas page',
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'portfolio_per_row',
+            'id' => 'marcas_per_row',
             'type' => 'text',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
             'title' => __('Number of items per row', 'kleo_framework'),
             'subtitle' => "A number between 2 and 6",
             'default' => '4'
         ),
         array(
-            'id' => 'portfolio_filter',
+            'id' => 'marcas_filter',
             'type' => 'select',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
-            'title' => __('Show categories filter on portfolio page', 'kleo_framework'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'title' => __('Show categories filter on marcas page', 'kleo_framework'),
             'subtitle' => '',
             'options' => array(
                 'yes' => 'Yes',
@@ -1309,38 +1309,38 @@ $sections[] = array(
             'default' => 'yes'
         ),
         array(
-            'id' => 'portfolio_image',
+            'id' => 'marcas_image',
             'type' => 'text',
-            'required' => array('portfolio_custom_archive', 'equals' , '0'),
+            'required' => array('marcas_custom_archive', 'equals' , '0'),
             'title' => __('Thumbnail image size', 'kleo_framework'),
-            'subtitle' => __('Set your portfolio image size in portfolio list. Defined in pixels. If you are using video items, use a 16:9 size format', 'kleo_framework'),
+            'subtitle' => __('Set your marcas image size in marcas list. Defined in pixels. If you are using video items, use a 16:9 size format', 'kleo_framework'),
             'default' => $kleo_config['post_gallery_img_width'] . "x" . $kleo_config['post_gallery_img_height']
         ),
         array(
             'id' => 'section-title-porto-single',
             'type' => 'section',
-            'title' => __( 'Portfolio Single Item Page', 'kleo_framework' ),
-            'subtitle' => __( 'Settings for portfolio item page', 'kleo_framework' ),
+            'title' => __( 'marcas Single Item Page', 'kleo_framework' ),
+            'subtitle' => __( 'Settings for marcas item page', 'kleo_framework' ),
             'indent' => true, // Indent all options below until the next 'section' option is set.
         ),
         array(
-            'id' => 'portfolio_media_status',
+            'id' => 'marcas_media_status',
             'type' => 'switch',
-            'title' => __('Display media on single portfolio page', 'kleo_framework'),
-            'subtitle' => __('If you want to show image/gallery/video before the content on single portfolio page', 'kleo_framework'),
+            'title' => __('Display media on single marcas page', 'kleo_framework'),
+            'subtitle' => __('If you want to show image/gallery/video before the content on single marcas page', 'kleo_framework'),
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'portfolio_back_to',
+            'id' => 'marcas_back_to',
             'type' => 'switch',
-            'title' => __('Show back to Portfolio icon(bottom of single portfolio item page)', 'kleo_framework'),
+            'title' => __('Show back to marcas icon(bottom of single marcas item page)', 'kleo_framework'),
             'subtitle' => '',
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'portfolio_comments',
+            'id' => 'marcas_comments',
             'type' => 'switch',
-            'title' => __('Enable comments on portfolio single page)', 'kleo_framework'),
+            'title' => __('Enable comments on marcas single page)', 'kleo_framework'),
             'subtitle' => '',
             'default' => '0' // 1 = checked | 0 = unchecked
         ),

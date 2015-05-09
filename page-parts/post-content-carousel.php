@@ -15,8 +15,8 @@ global $kleo_config;
 	<?php 
 	$kleo_post_format = get_post_format();
 
-    /* For portfolio post type */
-    if ( get_post_type() == 'portfolio' ) {
+    /* For marcas post type */
+    if ( get_post_type() == 'marcas' ) {
         if ( get_cfield( 'media_type' ) && get_cfield( 'media_type' ) != '' ) {
             $media_type = get_cfield( 'media_type' );
             switch ( $media_type ) {

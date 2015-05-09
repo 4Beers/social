@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying portfolio single items
+ * The Template for displaying marcas single items
  *
  * @package WordPress
  * @subpackage Kleo
@@ -25,8 +25,8 @@ if (! get_cfield('post_layout') || get_cfield('post_layout') == 'default') {
     global $kleo_config;
     $kleo_post_format = get_cfield( 'media_type' ) ? get_cfield( 'media_type' ) : 'thumb';
 
-    $media_status = sq_option('portfolio_media_status', 1);
-    $single_status = get_cfield('portfolio_media_status');
+    $media_status = sq_option('marcas_media_status', 1);
+    $single_status = get_cfield('marcas_media_status');
 
     if( $single_status != '' ) {
         $media_status = $single_status;
@@ -122,7 +122,7 @@ if (! get_cfield('post_layout') || get_cfield('post_layout') == 'default') {
 
             default:
                 if ( kleo_get_post_thumbnail_url() != '' ) {
-                    echo '<div class="portfolio-image">';
+                    echo '<div class="marcas-image">';
 
                     $img_url = kleo_get_post_thumbnail_url();
                     $image = aq_resize( $img_url, $kleo_config['post_single_img_width'], null, true, true, true );
@@ -148,7 +148,7 @@ if (! get_cfield('post_layout') || get_cfield('post_layout') == 'default') {
     kleo_post_nav();
     ?>
 
-    <?php if ( sq_option( 'portfolio_comments', 0 ) == 1 ) : ?>
+    <?php if ( sq_option( 'marcas_comments', 0 ) == 1 ) : ?>
 
         <!-- Begin Comments -->
         <?php comments_template( '', true ); ?>
@@ -161,9 +161,9 @@ if (! get_cfield('post_layout') || get_cfield('post_layout') == 'default') {
 
 <?php get_template_part('page-parts/general-after-wrap');?>
 
-<?php if ( sq_option( 'portfolio_back_to', 1) == 1 ) : ?>
+<?php if ( sq_option( 'marcas_back_to', 1) == 1 ) : ?>
 
-    <section class="footer-color text-center portfolio-back"><a title="<?php printf( __("Back to %s", "kleo_framework" ), sq_option( 'portfolio_name', 'Portfolio' ) );?>" href="<?php echo get_archive_link( 'portfolio' );?>"><i class="icon-th icon-2x"></i></a></section>
+    <section class="footer-color text-center marcas-back"><a title="<?php printf( __("Back to %s", "kleo_framework" ), sq_option( 'marcas_name', 'marcas' ) );?>" href="<?php echo get_archive_link( 'marcas' );?>"><i class="icon-th icon-2x"></i></a></section>
 
 <?php endif; ?>
 
