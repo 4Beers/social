@@ -12,8 +12,8 @@ class Post_types {
 
     public function __construct() {
         $this->labels = array();
-        $this->labels['clients'] = array( 'singular' => __( 'Client', 'kleo_framework' ), 'plural' => __( 'Clients', 'kleo_framework' ), 'menu' => __( 'Clients', 'kleo_framework' ) );
-        $this->labels['testimonials'] = array( 'singular' => __( 'Testimonial', 'kleo_framework' ), 'plural' => __( 'Testimonials', 'kleo_framework' ), 'menu' => __( 'Testimonials', 'kleo_framework' ) );
+        //$this->labels['clients'] = array( 'singular' => __( 'Client', 'kleo_framework' ), 'plural' => __( 'Clients', 'kleo_framework' ), 'menu' => __( 'Clients', 'kleo_framework' ) );
+        //$this->labels['testimonials'] = array( 'singular' => __( 'Testimonial', 'kleo_framework' ), 'plural' => __( 'Testimonials', 'kleo_framework' ), 'menu' => __( 'Testimonials', 'kleo_framework' ) );
 
         $portfolio_name = sq_option( 'portfolio_name', 'Portfolio' );
         $this->labels['portfolio'] = array( 'singular' => __( 'Portfolio item', 'kleo_framework' ), 'plural' => __( $portfolio_name, 'kleo_framework' ), 'menu' => __( 'Portfolio', 'kleo_framework' ) );
