@@ -15,12 +15,12 @@ class Post_types {
         //$this->labels['clients'] = array( 'singular' => __( 'Client', 'kleo_framework' ), 'plural' => __( 'Clients', 'kleo_framework' ), 'menu' => __( 'Clients', 'kleo_framework' ) );
         //$this->labels['testimonials'] = array( 'singular' => __( 'Testimonial', 'kleo_framework' ), 'plural' => __( 'Testimonials', 'kleo_framework' ), 'menu' => __( 'Testimonials', 'kleo_framework' ) );
 
-        $portfolio_name = sq_option( 'portfolio_name', 'Portfolio' );
-        $this->labels['portfolio'] = array( 'singular' => __( 'Portfolio item', 'kleo_framework' ), 'plural' => __( $portfolio_name, 'kleo_framework' ), 'menu' => __( 'Portfolio', 'kleo_framework' ) );
+        $marcas_name = sq_option( 'marcas_name', 'Marcas' );
+        $this->labels['marcas'] = array( 'singular' => __( 'Marca', 'kleo_framework' ), 'plural' => __( $marcas_name, 'kleo_framework' ), 'menu' => __( 'Marcas', 'kleo_framework' ) );
 
         add_action( 'init', array( &$this, 'setup_clients_post_type' ), 7 );
         add_action( 'init', array( &$this, 'setup_testimonials_post_type' ), 7 );
-        add_action( 'init', array( &$this, 'setup_portfolio_post_type' ), 7 );
+        add_action( 'init', array( &$this, 'setup_marcas_post_type' ), 7 );
     }
 
     /**
@@ -28,7 +28,8 @@ class Post_types {
      * @since  1.0
      * @return void
      */
-    public function setup_clients_post_type () {
+     
+     /* public function setup_clients_post_type () {
 
         $args = array(
             'labels' => $this->get_labels( 'clients', $this->labels['clients']['singular'], $this->labels['clients']['plural'], $this->labels['clients']['menu'] ),
@@ -68,7 +69,8 @@ class Post_types {
      * @since  1.0
      * @return void
      */
-    public function setup_testimonials_post_type () {
+    
+     /*public function setup_testimonials_post_type () {
 
         $args = array(
             'labels' => $this->get_labels( 'testimonials', $this->labels['testimonials']['singular'], $this->labels['testimonials']['plural'], $this->labels['testimonials']['menu'] ),
@@ -103,33 +105,33 @@ class Post_types {
 
 
     /**
-     * Setup Portfolio post type
+     * Setup marcas post type
      * @since  1.5
      * @return void
      */
-    public function setup_portfolio_post_type () {
+    public function setup_marcas_post_type () {
 
-        $has_archive = sq_option( 'portfolio_custom_archive', '0' ) == '1' ? FALSE : TRUE;
+        $has_archive = sq_option( 'marcas_custom_archive', '0' ) == '1' ? FALSE : TRUE;
 
         /* Default WordPress post archive page */
         if ( $has_archive ) {
-            $slug = sq_option( 'portfolio_slug', 'portfolio' );
-            $slug = apply_filters( 'kleo_portfolio_slug', $slug );
+            $slug = sq_option( 'marcas_slug', 'marcas' );
+            $slug = apply_filters( 'kleo_marcas_slug', $slug );
         }
         /* Custom page for archive */
         else {
-            $page_id = sq_option('portfolio_page');
+            $page_id = sq_option('marcas_page');
             $page = get_post($page_id);
             $slug = $page->post_name;
         }
 
         $args = array(
-            'labels' => $this->get_labels( 'portfolio', $this->labels['portfolio']['singular'], $this->labels['portfolio']['plural'], $this->labels['portfolio']['menu'] ),
+            'labels' => $this->get_labels( 'marcas', $this->labels['marcas']['singular'], $this->labels['marcas']['plural'], $this->labels['marcas']['menu'] ),
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
             'show_in_menu' => TRUE,
-            'menu_icon' => 'dashicons-format-image',
+            'menu_icon' => 'dashicons-location',
             'query_var' => true,
             'rewrite' => array(
                 'slug' => esc_attr($slug),
@@ -137,36 +139,36 @@ class Post_types {
                 'with_front' => false
             ),
             'has_archive' => $has_archive,
-            'hierarchical' => false,
+            'hierarchical' => true,
             'menu_position' => 20, // Below "Pages"
             'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' )
         );
 
-        register_post_type( 'portfolio', $args );
+        register_post_type( 'marcas', $args );
 
-        register_taxonomy_for_object_type( 'post_tag', 'portfolio' );
+        register_taxonomy_for_object_type( 'post_tag', 'marcas' );
 
 
         $args = array(
-                "label" 						=> _x('Portfolio Categories', 'category label', "kleo_framework"),
-                "singular_label" 				=> _x('Portfolio Category', 'category singular label', "kleo_framework"),
+                "label" 						=> _x('Marcas Locais', 'category label', "kleo_framework"),
+                "singular_label" 				=> _x('Marca Local', 'category singular label', "kleo_framework"),
                 'public'                        => true,
                 'hierarchical'                  => true,
                 'show_ui'                       => true,
                 'show_in_nav_menus'             => false,
                 'args'                          => array( 'orderby' => 'term_order' ),
                 'rewrite' => array(
-                    'slug'         => apply_filters( 'kleo_portfolio_cat_slug', 'portfolio-category' ),
+                    'slug'         => apply_filters( 'kleo_marcas_cat_slug', 'marcas-category' ),
                     'with_front'   => false,
                     'hierarchical' => true
                     ),
                 'query_var' => true
         );
 
-        register_taxonomy( 'portfolio-category', 'portfolio', $args );
+        register_taxonomy( 'marcas-category', 'marcas', $args );
 
 
-    } // End setup_portfolio_post_type()
+    } // End setup_marcas_post_type()
 
 
     /**
@@ -210,7 +212,7 @@ if (! function_exists( 'kleo_archive_add_custom_types' ) ) {
     function kleo_archive_add_custom_types( $query )
     {
         if (is_tag() && empty($query->query_vars['suppress_filters'])) {
-            /*$query->set( 'post_type', array('post', 'portfolio', 'product'));*/
+            /*$query->set( 'post_type', array('post', 'marcas', 'product'));*/
             $query->set('post_type', 'any');
             return $query;
         }
