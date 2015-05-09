@@ -301,7 +301,7 @@ function kleo_metaboxes( array $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id'         => 'post_layout',
 		'title'      => 'Post Layout',
-		'pages'      => array( 'post', 'product', 'portfolio' ), // Post type
+		'pages'      => array( 'post', 'product', 'marcas' ), // Post type
 		'context'    => 'side',
 		'priority'   => 'default',
 		'show_names' => false, // Show field names on the left
