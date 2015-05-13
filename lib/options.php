@@ -1216,49 +1216,49 @@ $sections[] = array(
 $sections[] = array(
     'icon' => 'el-icon-th-large',
     'icon_class' => 'icon-large',
-    'title' => __('marcas', 'kleo_framework'),
-    'desc' => __('<p class="description">marcas related settings. Please re-save permalinks when changing slugs or archive page.</p>', 'kleo_framework'),
+    'title' => __('parceiros', 'kleo_framework'),
+    'desc' => __('<p class="description">parceiros related settings. Please re-save permalinks when changing slugs or archive page.</p>', 'kleo_framework'),
     'fields' => array(
 
         array(
-            'id' => 'marcas_custom_archive',
+            'id' => 'parceiros_custom_archive',
             'type' => 'switch',
-            'title' => __('Custom page for marcas Archive', 'kleo_framework'),
+            'title' => __('Custom page for parceiros Archive', 'kleo_framework'),
             'subtitle' => 'This means you need to create a page and assign it below. Re-save permalinks from Settings - Permalinks',
             'description' => 'Setting it to ON will take the name and slug from the page assigned.',
             'default' => '0' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'marcas_page',
+            'id' => 'parceiros_page',
             'type' => 'select',
             'data' => 'pages',
-            'required' => array('marcas_custom_archive', 'equals' , '1'),
-            'title' => __('marcas Page', 'kleo_framework'),
-            'subtitle' => "You need to add [kleo_marcas] shortcode to the page or using Visual Composer.",
+            'required' => array('parceiros_custom_archive', 'equals' , '1'),
+            'title' => __('parceiros Page', 'kleo_framework'),
+            'subtitle' => "You need to add [kleo_parceiros] shortcode to the page or using Visual Composer.",
             'default' => ''
         ),
         array(
-            'id' => 'marcas_name',
+            'id' => 'parceiros_name',
             'type' => 'text',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
-            'title' => __('marcas name', 'kleo_framework'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
+            'title' => __('parceiros name', 'kleo_framework'),
             'subtitle' => "You can replace the name with something else",
-            'default' => 'marcas'
+            'default' => 'parceiros'
         ),
         array(
-            'id' => 'marcas_slug',
+            'id' => 'parceiros_slug',
             'type' => 'text',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
-            'title' => __('marcas link', 'kleo_framework'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
+            'title' => __('parceiros link', 'kleo_framework'),
             'subtitle' => "You can replace the name with something else. This affects your permalink structure so after changing this you must re-save options in Settings - Permalinks",
-            'default' => 'marcas'
+            'default' => 'parceiros'
         ),
         array(
-            'id' => 'marcas_style',
+            'id' => 'parceiros_style',
             'type' => 'select',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
-            'title' => __('Display style for marcas page', 'kleo_framework'),
-            'subtitle' => 'How to display the marcas listed items ',
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
+            'title' => __('Display style for parceiros page', 'kleo_framework'),
+            'subtitle' => 'How to display the parceiros listed items ',
             'options' => array(
                 'default' => 'Default',
                 'overlay' => 'Overlay'
@@ -1266,11 +1266,11 @@ $sections[] = array(
             'default' => 'default'
         ),
         array(
-            'id' => 'marcas_title_style',
+            'id' => 'parceiros_title_style',
             'type' => 'select',
             'required' => array(
-                array('marcas_custom_archive','equals','0'),
-                array('marcas_style','equals','overlay')
+                array('parceiros_custom_archive','equals','0'),
+                array('parceiros_style','equals','overlay')
             ),
             'title' => __('Title style', 'kleo_framework'),
             'subtitle' => '',
@@ -1281,26 +1281,26 @@ $sections[] = array(
             'default' => 'normal' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'marcas_excerpt',
+            'id' => 'parceiros_excerpt',
             'type' => 'switch',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
             'title' => __('Show/Hide subtitle', 'kleo_framework'),
-            'subtitle' => 'Display item excerpt on marcas page',
+            'subtitle' => 'Display item excerpt on parceiros page',
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'marcas_per_row',
+            'id' => 'parceiros_per_row',
             'type' => 'text',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
             'title' => __('Number of items per row', 'kleo_framework'),
             'subtitle' => "A number between 2 and 6",
             'default' => '4'
         ),
         array(
-            'id' => 'marcas_filter',
+            'id' => 'parceiros_filter',
             'type' => 'select',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
-            'title' => __('Show categories filter on marcas page', 'kleo_framework'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
+            'title' => __('Show categories filter on parceiros page', 'kleo_framework'),
             'subtitle' => '',
             'options' => array(
                 'yes' => 'Yes',
@@ -1309,38 +1309,38 @@ $sections[] = array(
             'default' => 'yes'
         ),
         array(
-            'id' => 'marcas_image',
+            'id' => 'parceiros_image',
             'type' => 'text',
-            'required' => array('marcas_custom_archive', 'equals' , '0'),
+            'required' => array('parceiros_custom_archive', 'equals' , '0'),
             'title' => __('Thumbnail image size', 'kleo_framework'),
-            'subtitle' => __('Set your marcas image size in marcas list. Defined in pixels. If you are using video items, use a 16:9 size format', 'kleo_framework'),
+            'subtitle' => __('Set your parceiros image size in parceiros list. Defined in pixels. If you are using video items, use a 16:9 size format', 'kleo_framework'),
             'default' => $kleo_config['post_gallery_img_width'] . "x" . $kleo_config['post_gallery_img_height']
         ),
         array(
             'id' => 'section-title-porto-single',
             'type' => 'section',
-            'title' => __( 'marcas Single Item Page', 'kleo_framework' ),
-            'subtitle' => __( 'Settings for marcas item page', 'kleo_framework' ),
+            'title' => __( 'parceiros Single Item Page', 'kleo_framework' ),
+            'subtitle' => __( 'Settings for parceiros item page', 'kleo_framework' ),
             'indent' => true, // Indent all options below until the next 'section' option is set.
         ),
         array(
-            'id' => 'marcas_media_status',
+            'id' => 'parceiros_media_status',
             'type' => 'switch',
-            'title' => __('Display media on single marcas page', 'kleo_framework'),
-            'subtitle' => __('If you want to show image/gallery/video before the content on single marcas page', 'kleo_framework'),
+            'title' => __('Display media on single parceiros page', 'kleo_framework'),
+            'subtitle' => __('If you want to show image/gallery/video before the content on single parceiros page', 'kleo_framework'),
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'marcas_back_to',
+            'id' => 'parceiros_back_to',
             'type' => 'switch',
-            'title' => __('Show back to marcas icon(bottom of single marcas item page)', 'kleo_framework'),
+            'title' => __('Show back to parceiros icon(bottom of single parceiros item page)', 'kleo_framework'),
             'subtitle' => '',
             'default' => '1' // 1 = checked | 0 = unchecked
         ),
         array(
-            'id' => 'marcas_comments',
+            'id' => 'parceiros_comments',
             'type' => 'switch',
-            'title' => __('Enable comments on marcas single page)', 'kleo_framework'),
+            'title' => __('Enable comments on parceiros single page)', 'kleo_framework'),
             'subtitle' => '',
             'default' => '0' // 1 = checked | 0 = unchecked
         ),

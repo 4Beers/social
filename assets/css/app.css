@@ -6,7 +6,7 @@
 Theme Name: Kleo Template
 Description:  A multipurpose WordPress template
 Author: SeventhQueen
-Author URI: http://themeforest.net/user/SeventhQueen/portfolio?ref=SeventhQueen
+Author URI: http://themeforest.net/user/SeventhQueen/parceiros?ref=SeventhQueen
 Tags: clean, responsive, creative, minimal, modern, landing page, bootstrap 3
 
 01. Shared Styles
@@ -1589,7 +1589,7 @@ a.ajax_view_all:after {
 .kleo-ajax-type-groups {}
 .kleo-ajax-type-page {}
 .kleo-ajax-type-post {}
-.kleo-ajax-type-portfolio {}
+.kleo-ajax-type-parceiros {}
 .kleo-ajax-type-product {}
 
 .show_search_pop {
@@ -4845,25 +4845,25 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 /* -----------------------------------------
-   Portfolio
+   parceiros
 ----------------------------------------- */
 
 /* Filter tab-links */
-.portfolio-filter-tabs {
+.parceiros-filter-tabs {
     list-style: none;
     text-align: center;
     padding: 20px 0;
 }
-.portfolio-filter-tabs li {
+.parceiros-filter-tabs li {
     display: inline-block;
     padding: 10px 1px;
     text-transform: uppercase;
 }
-.portfolio-filter-tabs li.selected a {
+.parceiros-filter-tabs li.selected a {
     border-style: solid;
     border-width: 1px;
 }
-.portfolio-filter-tabs li a {
+.parceiros-filter-tabs li a {
     display:  inline-block;
     border-radius: 22px;
     height: 30px;
@@ -4872,57 +4872,57 @@ only screen and (                min-resolution: 2dppx) {
     border: 1px solid transparent;
 }
 
-/* Portfolio Items Common Style */
-.portfolio-items.default {}
-.portfolio-items li .portfolio-image img {
+/* parceiros Items Common Style */
+.parceiros-items.default {}
+.parceiros-items li .parceiros-image img {
     width: 100%;
 }
 
-/* Portfolio Items Default Style */
-.portfolio-items.default-style li .portfolio-item-content {
+/* parceiros Items Default Style */
+.parceiros-items.default-style li .parceiros-item-content {
     margin: 0 10px 20px;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.22);
 }
-.portfolio-items.default-style li .portfolio-header .post-title {
+.parceiros-items.default-style li .parceiros-header .post-title {
     padding: 10px;
 }
-.portfolio-items.default-style li .portfolio-info {
+.parceiros-items.default-style li .parceiros-info {
     padding: 0 10px 10px;
 }
 
 
-/* Portfolio Items Overlay Style */
-.portfolio-items.overlay-style {}
-.portfolio-items.overlay-style li {}
-.portfolio-items.overlay-style li .portfolio-item-content {}
-.portfolio-items.overlay-style li.porto-hosted_video .portfolio-info,
-.portfolio-items.overlay-style li.porto-video .portfolio-info {
+/* parceiros Items Overlay Style */
+.parceiros-items.overlay-style {}
+.parceiros-items.overlay-style li {}
+.parceiros-items.overlay-style li .parceiros-item-content {}
+.parceiros-items.overlay-style li.porto-hosted_video .parceiros-info,
+.parceiros-items.overlay-style li.porto-video .parceiros-info {
     display: none;
 }
-.portfolio-items.overlay-style li.porto-slider {}
-.portfolio-items.overlay-style li.porto-thumb {}
+.parceiros-items.overlay-style li.porto-slider {}
+.parceiros-items.overlay-style li.porto-thumb {}
 
-.portfolio-items.overlay-style li .portfolio-image img {}
+.parceiros-items.overlay-style li .parceiros-image img {}
 
-.portfolio-items.overlay-style li .portfolio-header .post-title,
-.portfolio-items.overlay-style li .portfolio-info {
+.parceiros-items.overlay-style li .parceiros-header .post-title,
+.parceiros-items.overlay-style li .parceiros-info {
     padding: 10px;
     position: absolute;
     -webkit-transform: translate3d(0,50px,0);
     transform: translate3d(0,50px,0);
 }
-.portfolio-items.overlay-style li .portfolio-header .post-title,
-.portfolio-items.overlay-style li .portfolio-header .post-title a,
-.portfolio-items.overlay-style li .portfolio-info p {
+.parceiros-items.overlay-style li .parceiros-header .post-title,
+.parceiros-items.overlay-style li .parceiros-header .post-title a,
+.parceiros-items.overlay-style li .parceiros-info p {
     color: #fff !important;
 }
-.portfolio-items.overlay-style li .portfolio-info {
+.parceiros-items.overlay-style li .parceiros-info {
     bottom: 20px;
 }
-.portfolio-items.per-row-5.overlay-style li .portfolio-info {
+.parceiros-items.per-row-5.overlay-style li .parceiros-info {
     bottom: 0;
 }
-.portfolio-items.overlay-style li .portfolio-header .post-title {
+.parceiros-items.overlay-style li .parceiros-header .post-title {
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
     width: 50%;
@@ -4931,62 +4931,62 @@ only screen and (                min-resolution: 2dppx) {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.portfolio-items.overlay-style li .portfolio-info {
+.parceiros-items.overlay-style li .parceiros-info {
     opacity: 0;
     -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
     transition: opacity 0.2s, transform 0.35s;
 }
-.portfolio-items.overlay-style li:hover .portfolio-info {
+.parceiros-items.overlay-style li:hover .parceiros-info {
     opacity: 1;
 }
-.portfolio-items.overlay-style li:hover .portfolio-header .post-title {
+.parceiros-items.overlay-style li:hover .parceiros-header .post-title {
     transition: all 0.3s ease-in-out 0s;
     width: 100%;
     -webkit-transform: translate3d(0,40px,0);
     transform: translate3d(0,40px,0);
 }
-.portfolio-items.overlay-style li:hover .portfolio-image img,
-.portfolio-items.overlay-style li:hover .portfolio-info {
+.parceiros-items.overlay-style li:hover .parceiros-image img,
+.parceiros-items.overlay-style li:hover .parceiros-info {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     cursor: pointer;
 }
-.portfolio-items.overlay-style li:hover .hover-element {
+.parceiros-items.overlay-style li:hover .hover-element {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
 }
-.portfolio-items.overlay-style li:hover .hover-element i {
+.parceiros-items.overlay-style li:hover .hover-element i {
     display: none;
 }
 
-/* Portfolio Items Animated-Title Style */
-.portfolio-items.overlay-style.anim-title li .portfolio-header .post-title {
+/* parceiros Items Animated-Title Style */
+.parceiros-items.overlay-style.anim-title li .parceiros-header .post-title {
     opacity: 0;
     transform: translate3d(-20px,50px,0);
 }
-.portfolio-items.overlay-style.anim-title li:hover .portfolio-header .post-title {
+.parceiros-items.overlay-style.anim-title li:hover .parceiros-header .post-title {
     opacity: 1;
     -webkit-transform: translate3d(0,50px,0);
     transform: translate3d(0,50px,0);
 }
 
 /* Hide excerpt */
-.portfolio-items.hide-excerpt .portfolio-info {
+.parceiros-items.hide-excerpt .parceiros-info {
     display: none;
 }
-.portfolio-items .kleo-video-embed {
+.parceiros-items .kleo-video-embed {
     overflow: hidden;
 }
-/*.portfolio-items .mejs-container {
+/*.parceiros-items .mejs-container {
     max-width: 100%;
     height: auto !important;
 }*/
-/*.portfolio-items .mejs-mediaelement {
+/*.parceiros-items .mejs-mediaelement {
     position: relative;
 }*/
-.portfolio-items .kleo-video-embed .fluid-width-video-wrapper {
+.parceiros-items .kleo-video-embed .fluid-width-video-wrapper {
     height: 100%;
 }
-.portfolio-back {
+.parceiros-back {
     padding: 20px 0;
 }
 
@@ -6368,7 +6368,7 @@ canvas.letitsnow.pos-fixed {position: fixed;}
 Theme Name: Kleo Template
 Description:  A multipurpose Wordpress template
 Author: SeventhQueen
-Author URI: http://themeforest.net/user/SeventhQueen/portfolio?ref=SeventhQueen
+Author URI: http://themeforest.net/user/SeventhQueen/parceiros?ref=SeventhQueen
 Version: 1.0
 Tags: clean, responsive, creative, minimal, modern, landing page, bootstrap 3
 

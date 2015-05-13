@@ -1,9 +1,9 @@
 <?php
 /*
-marcas archive loop item
+parceiros archive loop item
 */
 
-$post_terms = get_the_terms( $post->ID, 'marcas-category' );
+$post_terms = get_the_terms( $post->ID, 'parceiros-category' );
 $term_slug = "";
 
 if( ! empty( $post_terms ) ) {
@@ -16,7 +16,7 @@ $kleo_post_format = get_cfield( 'media_type' ) ? get_cfield( 'media_type' ) : 't
 ?>
 
 	<li itemscope itemtype="http://schema.org/CreativeWork" id="post-<?php the_ID(); ?>" <?php post_class( $term_slug. " porto-" . $kleo_post_format ); ?>>
-        <div class="marcas-item-content animated animate-when-almost-visible el-appear">
+        <div class="parceiros-item-content animated animate-when-almost-visible el-appear">
 
             <?php
             global $kleo_config;
@@ -81,9 +81,9 @@ $kleo_post_format = get_cfield( 'media_type' ) ? get_cfield( 'media_type' ) : 't
                     echo '<div class="kleo-banner-slider">'
                         .'<div class="kleo-banner-items" >';
                     if ( $slides ) {
-                        global $marcas_img_width, $marcas_img_height;
-                        $img_width = isset($marcas_img_width) ? $marcas_img_width : $kleo_config['post_gallery_img_width'];
-                        $img_height = isset($marcas_img_height) ? $marcas_img_height : $kleo_config['post_gallery_img_height'];
+                        global $parceiros_img_width, $parceiros_img_height;
+                        $img_width = isset($parceiros_img_width) ? $parceiros_img_width : $kleo_config['post_gallery_img_width'];
+                        $img_height = isset($parceiros_img_height) ? $parceiros_img_height : $kleo_config['post_gallery_img_height'];
 
                         foreach( $slides as $slide ) {
                             if ( $slide ) {
@@ -112,11 +112,11 @@ $kleo_post_format = get_cfield( 'media_type' ) ? get_cfield( 'media_type' ) : 't
 
                 default:
                     if ( kleo_get_post_thumbnail_url() != '' ) {
-                        global $marcas_img_width, $marcas_img_height;
-                        $img_width = isset($marcas_img_width) ? $marcas_img_width : $kleo_config['post_gallery_img_width'];
-                        $img_height = isset($marcas_img_height) ? $marcas_img_height : $kleo_config['post_gallery_img_height'];
+                        global $parceiros_img_width, $parceiros_img_height;
+                        $img_width = isset($parceiros_img_width) ? $parceiros_img_width : $kleo_config['post_gallery_img_width'];
+                        $img_height = isset($parceiros_img_height) ? $parceiros_img_height : $kleo_config['post_gallery_img_height'];
 
-                        echo '<div class="marcas-image">';
+                        echo '<div class="parceiros-image">';
 
                         $img_url = kleo_get_post_thumbnail_url();
                         $image = aq_resize( $img_url, $img_width, $img_height, true, true, true );
@@ -136,13 +136,13 @@ $kleo_post_format = get_cfield( 'media_type' ) ? get_cfield( 'media_type' ) : 't
             ?>
 
 
-            <div class="marcas-header">
+            <div class="parceiros-header">
                 <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-            </div><!--end marcas-header-->
+            </div><!--end parceiros-header-->
 
             <?php if (kleo_excerpt() != '<p></p>') : ?>
 
-                <div class="marcas-info">
+                <div class="parceiros-info">
                     <?php echo kleo_excerpt( 60, false ); ?>
                 </div><!--end post-info-->
 

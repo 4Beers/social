@@ -90,7 +90,7 @@ function kleo_setup() {
 	add_theme_support( 'kleo-facebook-login' );
     add_theme_support( 'kleo-mega-menu' );
     add_theme_support( 'kleo-menu-items' );
-    add_theme_support( 'kleo-marcas' );
+    add_theme_support( 'kleo-parceiros' );
     
 	/* Third-party plugins */
 	add_theme_support( 'bbpress' );

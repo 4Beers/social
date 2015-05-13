@@ -2,20 +2,20 @@
 
 /*
 *
-*	marcas Items Functions
+*	parceiros Items Functions
 *	KLEO Framework
 *
 */
 
-/* marcas ITEMS
+/* parceiros ITEMS
 ================================================== */
-if (!function_exists('kleo_marcas_items')) {
+if (!function_exists('kleo_parceiros_items')) {
 
-    function kleo_marcas_items( $display_type = 'default', $title_style = 'normal', $columns = 4, $item_count = NULL, $pagination = "no", $filter = 'yes', $excerpt = 'yes', $img_width = '', $img_height = '', $category = '', $exclude_categories = array() ) {
+    function kleo_parceiros_items( $display_type = 'default', $title_style = 'normal', $columns = 4, $item_count = NULL, $pagination = "no", $filter = 'yes', $excerpt = 'yes', $img_width = '', $img_height = '', $category = '', $exclude_categories = array() ) {
 
         /* OUTPUT VARIABLE
         ================================================== */
-        $marcas_items_output = "";
+        $parceiros_items_output = "";
         $count = 0;
 
         /* CATEGORY SLUG
@@ -26,7 +26,7 @@ if (!function_exists('kleo_marcas_items')) {
         $category_slug = str_replace('_', '-', $category);
 
 
-        /* marcas QUERY
+        /* parceiros QUERY
         ================================================== */
         global $post, $wp_query;
 
@@ -41,15 +41,15 @@ if (!function_exists('kleo_marcas_items')) {
         if ( $exclude_categories == '' ) {
             $exclude_categories = array();;
         }
-        $marcas_args = array(
-            'post_type' => 'marcas',
+        $parceiros_args = array(
+            'post_type' => 'parceiros',
             'post_status' => 'publish',
             'paged' => $paged,
-            apply_filters( 'kleo_marcas_cat_slug', 'marcas-category' ) => $category_slug,
+            apply_filters( 'kleo_parceiros_cat_slug', 'parceiros-category' ) => $category_slug,
             'posts_per_page' => $item_count,
             'tax_query' => array(
                     array(
-                        'taxonomy' => apply_filters( 'kleo_marcas_cat_slug', 'marcas-category' ),
+                        'taxonomy' => apply_filters( 'kleo_parceiros_cat_slug', 'parceiros-category' ),
                         'field' => 'id',
                         'terms' => $exclude_categories,
                         'operator' => 'NOT IN'
@@ -57,7 +57,7 @@ if (!function_exists('kleo_marcas_items')) {
                 )
         );
 
-        $marcas_items = new WP_Query( $marcas_args );
+        $parceiros_items = new WP_Query( $parceiros_args );
 
 
         /* Class config
@@ -79,28 +79,28 @@ if (!function_exists('kleo_marcas_items')) {
         $classes .= ' per-row-' . $columns;
 
         /* IMAGE SIZE
-         * Set global variables to be availabe in the marcas template part
+         * Set global variables to be availabe in the parceiros template part
         ================================================== */
         if ( $img_width != "" && $img_height != '' ) {
-            global $marcas_img_width, $marcas_img_height;
-            $marcas_img_width = $img_width;
-            $marcas_img_height = $img_height;
+            global $parceiros_img_width, $parceiros_img_height;
+            $parceiros_img_width = $img_width;
+            $parceiros_img_height = $img_height;
         }
 
         /* ITEMS OUTPUT
         ================================================== */
 
         if ( $filter == 'yes' ) {
-            $marcas_items_output = kleo_marcas_filter( $category, $exclude_categories );
+            $parceiros_items_output = kleo_parceiros_filter( $category, $exclude_categories );
         }
 
-        $marcas_items_output .= '<ul class="marcas-items responsive-cols kleo-masonry ' . $classes . '">'. "\n";
+        $parceiros_items_output .= '<ul class="parceiros-items responsive-cols kleo-masonry ' . $classes . '">'. "\n";
 
-        while ( $marcas_items->have_posts() ) : $marcas_items->the_post();
+        while ( $parceiros_items->have_posts() ) : $parceiros_items->the_post();
 
             ob_start();
-            get_template_part( 'page-parts/marcas-masonry');
-            $marcas_items_output .= ob_get_clean();
+            get_template_part( 'page-parts/parceiros-masonry');
+            $parceiros_items_output .= ob_get_clean();
 
             $count++;
 
@@ -108,43 +108,43 @@ if (!function_exists('kleo_marcas_items')) {
 
         wp_reset_postdata();
 
-        $marcas_items_output .= '</ul>'. "\n";
+        $parceiros_items_output .= '</ul>'. "\n";
 
 
         /* PAGINATION OUTPUT
         ================================================== */
         if ($pagination == "yes") {
-            $marcas_items_output .= '<div class="pagination-wrap">';
-            $marcas_items_output .= kleo_pagination( $marcas_items->max_num_pages, false);
-            $marcas_items_output .= '</div>';
+            $parceiros_items_output .= '<div class="pagination-wrap">';
+            $parceiros_items_output .= kleo_pagination( $parceiros_items->max_num_pages, false);
+            $parceiros_items_output .= '</div>';
         }
 
 
         /* FUNCTION OUTPUT
         ================================================== */
-        return $marcas_items_output;
+        return $parceiros_items_output;
     }
 }
 
 
-/* marcas FILTER
+/* parceiros FILTER
 ================================================== */
-if ( ! function_exists( 'kleo_marcas_filter' ) ) {
-    function kleo_marcas_filter( $parent_category = "", $exclude_categories = array() ) {
+if ( ! function_exists( 'kleo_parceiros_filter' ) ) {
+    function kleo_parceiros_filter( $parent_category = "", $exclude_categories = array() ) {
 
         $filter_output = $tax_terms = "";
 
         if ( $parent_category == "" || $parent_category == "all" ) {
-            $tax_terms = kleo_get_category_list( 'marcas-category', 1 );
+            $tax_terms = kleo_get_category_list( 'parceiros-category', 1 );
         } else {
-            $tax_terms = kleo_get_category_list( 'marcas-category', 1, $parent_category );
+            $tax_terms = kleo_get_category_list( 'parceiros-category', 1, $parent_category );
         }
 
         $filter_output .= '<div class="filter-wrap row clearfix">'. "\n";
-        $filter_output .= '<ul class="marcas-filter-tabs bar-styling filtering col-sm-12 clearfix">'. "\n";
+        $filter_output .= '<ul class="parceiros-filter-tabs bar-styling filtering col-sm-12 clearfix">'. "\n";
         $filter_output .= '<li class="all selected"><a data-filter="*" href="#"><span class="item-name">'. __("All", "kleo_framework").'</span></a></li>'. "\n";
         foreach ($tax_terms as $tax_term) {
-            $term = get_term_by('name', $tax_term, 'marcas-category');
+            $term = get_term_by('name', $tax_term, 'parceiros-category');
             if ( $term && ! in_array( $term->term_id, $exclude_categories ) ) {
                 $filter_output .= '<li><a href="#" data-filter=".' . $term->slug . '"><span class="item-name">' . $term->name . '</span></a></li>'. "\n";
             }
@@ -155,23 +155,23 @@ if ( ! function_exists( 'kleo_marcas_filter' ) ) {
     }
 }
 
-// Add marcas meta box
-add_filter('kleo_meta_boxes', 'kleo_marcas_meta');
+// Add parceiros meta box
+add_filter('kleo_meta_boxes', 'kleo_parceiros_meta');
 
-function kleo_marcas_meta($meta_boxes) {
+function kleo_parceiros_meta($meta_boxes) {
     $prefix = '_kleo_';
     $meta_boxes[] = array(
-        'id'         => 'theme_marcas',
-        'title'      => 'marcas settings',
-        'pages'      => array( 'marcas' ), // Post type
+        'id'         => 'theme_parceiros',
+        'title'      => 'parceiros settings',
+        'pages'      => array( 'parceiros' ), // Post type
         'context'    => 'normal',
         'priority'   => 'default',
         'show_names' => true, // Show field names on the left
         'fields'     => array(
             array(
                 'name' => 'Show media on single item page',
-                'desc' => 'If you want to show image/gallery/video before the content on single marcas page',
-                'id'   => $prefix . 'marcas_media_status',
+                'desc' => 'If you want to show image/gallery/video before the content on single parceiros page',
+                'id'   => $prefix . 'parceiros_media_status',
                 'type' => 'select',
                 'options' => array(
                     array('value' => '', 'name' => 'Default'),

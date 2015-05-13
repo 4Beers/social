@@ -224,8 +224,8 @@ function kleo_theme_functions() {
     /* Custom menu items */
     require_if_theme_supports( 'kleo-menu-items', KLEO_LIB_DIR . '/menu-items.php');
 
-    /* marcas */
-    require_if_theme_supports( 'kleo-marcas', KLEO_LIB_DIR . '/marcas.php');
+    /* parceiros */
+    require_if_theme_supports( 'kleo-parceiros', KLEO_LIB_DIR . '/parceiros.php');
 
     /* Include admin customizations */
     if ( is_admin() ) {
@@ -1847,7 +1847,7 @@ if ( sq_option( 'let_it_snow', 0 ) == 1 ) {
  * @return mixed|string
  */
 function kleo_get_post_format() {
-    if ( get_post_type() == 'marcas' ) {
+    if ( get_post_type() == 'parceiros' ) {
         if (get_cfield('media_type') && get_cfield('media_type') != '') {
             $media_type = get_cfield('media_type');
             switch ($media_type) {
