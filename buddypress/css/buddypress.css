@@ -2141,6 +2141,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 }
 #buddypress div#item-nav {
 	height: 102px;
+	margin-top: -25px;
 	overflow: hidden;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
@@ -2191,10 +2192,10 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 }
 #buddypress div#item-nav ul li a {
 	padding: 15px 20px;
-	font-size: 12px;
+	font-size: 10px;
 	text-transform: uppercase;
 	font-family: inherit;
-	font-weight: normal;
+	font-weight: bold;
 }
 #buddypress div#item-nav ul li a:before {
 	font: 400% "fontello";

@@ -48,6 +48,17 @@
 
 		</div><!-- #item-buttons -->
 
+		<div id="item-nav">
+              <div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
+                  <ul class="responsive-tabs">
+                      <?php bp_get_displayed_user_nav(); ?>
+
+                      <?php do_action('bp_member_options_nav'); ?>
+
+                  </ul>
+              </div>
+          </div>
+          <!-- #item-nav -->
 		<?php
 		/***
 		 * If you'd like to show specific profile fields here use:
