@@ -1757,7 +1757,7 @@ if (sq_option('bp_online_status', 1) == 1) {
 /*
  * Add Prev,Next links after breadcrumb if it is a profile page
  */
-function kleo_bp_add_profile_navigation() {
+/*function kleo_bp_add_profile_navigation() {
 	if(bp_is_user()): ?>
 		<nav class="pagination-sticky members-navigation" role="navigation">
 			<?php 
@@ -1789,7 +1789,7 @@ function kleo_bp_add_profile_navigation() {
 		</nav><!-- .navigation -->
 	<?php endif;
 }
-add_action('bp_after_member_body', 'kleo_bp_add_profile_navigation');
+add_action('bp_after_member_body', 'kleo_bp_add_profile_navigation');*/
 
 /**
  * Get next profile link
