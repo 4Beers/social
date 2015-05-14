@@ -23,7 +23,7 @@
 <div id="item-header-content" <?php if (isset($_COOKIE['bp-profile-header']) && $_COOKIE['bp-profile-header'] == 'small') {echo 'style="display:none;"';} ?>>
 
 	<?php if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() ) : ?>
-		<h4 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h4>
+		<h4 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h4><br>
 	<?php endif; ?>
 
 	<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
